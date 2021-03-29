@@ -773,6 +773,11 @@
     A sequência de parâmetros, contudo, não é tão complexa como parece à primeira vista. Veja:
     TABELA; COLUNAS_LOV; PK||chr(9)||DESCR; WHERE+ORDER : DEFAULT : VDD : POSICIONAMENTO
 
+    Antes dos campos da LOV é possível definir um DIM para a FK. Os valores devem ser separados por espaço.
+    Exemplo:
+      [SPACE]: TableSpace:  FK: ALL_TABLES; [DIM 60 0 0 40 80]distinct tablespace_name
+                   ; tablespace_name||chr(9)||tablespace_name
+
     É possível tornar o campo da fk digitável. Dessa forma conseguimos filtrar os valores que aparecerão na LOV (lista de valores) ou mesmo selecionar algum registro sem ter que abrir a LOV.
     Para isso, utilizamos a seguinte sintaxe na FK:
     TABELA; CAMPOS_LOV; PK||chr(9)||DESCR; WHERE and 8=8^CAMPO_DE_BUSCA : DEFAULT
