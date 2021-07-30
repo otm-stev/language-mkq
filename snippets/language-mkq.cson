@@ -624,11 +624,13 @@
     'body': '[TIT]\n${1:Título da janela#}\n$0'
     'description': """
     Define o título a ser apresentado na tela que receberá parâmetros.
-    Se o texto finalizar com o caractere #, ao fechar a janela uma mensagem de confirmação será solicitada.
+    Se o conteúdo finalizar com o caractere #, ao fechar a janela no botão de fechar uma mensagem de confirmação será apresentada.
+    Se o conteúdo finalizar com ##, o botão de fechar será suprimido.
+    Se o conteúdo finalizar com texto entre duas #, o mesmo será o texto da mensagem de confirmação.
 
     Exemplo
       [TIT]
-      Relação de Itens#
+      Relação de Itens#Deseja finalizar a aplicação?#
     """
 
   '[VDD]':
