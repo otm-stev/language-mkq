@@ -423,14 +423,13 @@
     2. [PLE] em caso de nenhum registro selecionado;
     3. Select MSG from OTM_MENSAGEM where TIPO='ID' and SESSAO=Sessão Atual caso seja necessário retornar um número de registros ou caracteres que excedam o limite estabelecido pelo banco de dados.
     Embora não seja obrigatório, é boa prática definir a tag [OPC] ao utilizar a tag [PLE].
-    Observação: Na validação do [PLE] é necessário o uso de aspas simples ('[PLE]').
-    -----
-    Exemplo do uso de aspas simples:
-    #> instr('[PLE]', 'PLE') > 0 <#
 
     Exemplo:
       [PLE]
       *ID#0
+
+      [MFI]
+      Deseja deletar os registros [PLE]?
     """
 
   '[PLF]':
@@ -1334,6 +1333,10 @@
     Cada cor altera um segmento da imagem.
     Para não definir uma cor para algum segmento específico, basta deixar vazio.
     A cor com @ define o default para os segmentos sem cor definida.
+
+    Caso seja passado apenas |@, assume as cores do próprio SVG.
+    Exemplo:
+      %SVGI/logo-buffer|@
 
     Temos alguns padrões de cores para uso no SVG, conforme:
       PAD     assume a cor padrão da plataforma
