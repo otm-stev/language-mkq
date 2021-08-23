@@ -542,7 +542,7 @@
     Sintaxe:
       'MKQ:MKQ_a_ser_chamado' DRILL#0
 
-    Antes de "MKQ:" é possível a utilização de prefixos (#,+,-,*,$).
+    Antes de "MKQ:" é possível a utilização de prefixos (#,+,-,*).
     Observe a tabela abaixo:
     +--------------------------------------------------+
     |      Orientações em chamadas de novo MKQ         |
