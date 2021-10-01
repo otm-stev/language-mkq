@@ -146,7 +146,7 @@
     Ao clicar no botão de retornar durante uma edição a mesma será cancelada.
     A sintaxe básica segue o padrão
     ID : TYPE : LENGTH : PARAMETERS : TABLE_NAME : COLUMN_NAME : USER_DESCRIPTION : REFRESH
-    mas seu conteúdo varia de acordo com o tipo de dado da coluna a ser editada (CK, FK, DT, TX, NM, DC, PW, XX).
+    mas seu conteúdo varia de acordo com o tipo de dado da coluna a ser editada (CK, FK, DT, TX, NM, DC, XX).
 
     TYPE
     Ao utilizar TYPE seguido do operador -, o texto do campo a ser editado não será selecionado.
@@ -388,15 +388,18 @@
     'description': """
     Permite estabelecer definições para a geração do arquivo PDF. Se não informado, definições padrões serão assumidas.
     As seguintes definições podem ser estabelecidas nesta tag:
-    • C: define fonte do cabeçalho
-    • R: define fonte do rodapé
-    • S: dimensão do papel
-    • O: orientação (retrato ou paisagem)
-    • M: margens (esquerda, direita, superior, inferior)
-    • Z: indica se deve ou não zebrar as linhas do relatório
-    • F: define fonte dos dados do relatório (se alguma célula possuir definição de fonte, será respeitada a definição)
-    • H: indica se altura da linha deve ser automática (auto-ajustada) ou se deve obedecer a altura definida na tabela de dados
-    • V: indica se, além de gerar na área temporária, deve exibir o mesmo na tela
+    • C: define fonte do cabeçalho (default: {X-X-X/31-73-125/Noto Sans/1/10})
+    • R: define fonte do rodapé (default: {X-X-X/31-73-125/Noto Sans/2/8})
+    • S: dimensão do papel (default: 210/297)
+    • O: orientação (retrato ou paisagem, default: retrato)
+    • M: margens (esquerda, direita, superior, inferior. Default: 7/7/0/10)
+    • Z: indica se deve ou não zebrar as linhas do relatório (default: S)
+    • F: define fonte dos dados do relatório (se alguma célula possuir definição de fonte, será respeitada a definição. Default: {X-X-X/31-73-125/Noto Sans/0/8}))
+    • H: indica se altura da linha deve ser automática (auto-ajustada) ou se deve obedecer a altura definida na tabela de dados (default: N)
+    • V: pode receber 3 opções (default: S)
+          - S: além de gerar na área temporária, exibe o mesmo na tela
+          - N: apenas gera na área temporária
+          - P: gera uma planilha ao invés de um PDF
 
     Exemplo:
       [PDF]
