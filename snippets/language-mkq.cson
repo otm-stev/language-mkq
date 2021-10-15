@@ -504,11 +504,14 @@
     É possível inserir um PDF externo na exportação para PDF.
     Para isso, concatena-se um <b>chr(12)</b> seguindo a sintaxe:
 
-    <b>chr(12)</b>||'#PDF^CAMINHO_PDF^PAGINAS^IMPRIMIR_BRANCO_SE_ERRO^INICIAR_PAGINA_APOS_PDF'
+    chr(12)||'#PDF^CAMINHO_PDF^PAGINAS^IMPRIMIR_BRANCO_SE_ERRO^INICIAR_PAGINA_APOS_PDF'
 
     PAGINAS: se não informado, insere TODO o PDF. Se informado, separar páginas por vírgula.
     IMPRIMIR_BRANCO_SE_ERRO: se igual S, imprime página em branco no caso de erro (default N).
-    INICIAR_PAGINA_APOS_PDF: se igual N, permite continuar o conteúdo na mesma página do final do PDF inserido (default S).
+    INICIAR_PAGINA_APOS_PDF: pode receber três opções (default S):
+          N - permite continuar o conteúdo na mesma página sobrepondo o PDF inserido;
+          S - imprime o conteúdo na página seguinte do PDF inserido;
+          P - se a próxima página for par, imprime uma página branca (para impressão frente e verso).
 
     É possível realizar quebras de página no meio de determinado script.
     Para isso, concatena-se um chr(12) na primeira célula da linha que irá para a próxima página.
