@@ -502,7 +502,7 @@
 
     Uso de #PDF:
     É possível inserir um PDF externo na exportação para PDF.
-    Para isso, concatena-se um <b>chr(12)</b> seguindo a sintaxe:
+    Para isso, concatena-se um chr(12) seguindo a sintaxe:
 
     chr(12)||'#PDF^CAMINHO_PDF^PAGINAS^IMPRIMIR_BRANCO_SE_ERRO^INICIAR_PAGINA_APOS_PDF'
 
@@ -511,7 +511,7 @@
     INICIAR_PAGINA_APOS_PDF: pode receber três opções (default S):
           N - permite continuar o conteúdo na mesma página sobrepondo o PDF inserido;
           S - imprime o conteúdo na página seguinte do PDF inserido;
-          P - se a próxima página for par, imprime uma página branca (para impressão frente e verso).
+          I - se a próxima página for ímpar, imprime o conteúdo, caso contrário imprime uma página branca (para impressão frente e verso).
 
     É possível realizar quebras de página no meio de determinado script.
     Para isso, concatena-se um chr(12) na primeira célula da linha que irá para a próxima página.
