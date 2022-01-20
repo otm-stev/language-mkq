@@ -143,6 +143,7 @@
     'body': '[EDT]\n$0'
     'description': """
     Esta tag permite definir regras de edição de colunas na tela de grid.
+    Para utilizar é necessário que a tabela tenha uma coluna com o nome ID.
     Ao clicar no botão de retornar durante uma edição a mesma será cancelada.
     A sintaxe básica segue o padrão
     ID : TYPE : LENGTH : PARAMETERS : TABLE_NAME : COLUMN_NAME : USER_DESCRIPTION : REFRESH
@@ -358,12 +359,14 @@
 
   '[OPP]':
     'prefix': 'opp'
-    'body': '[OPP]\n${1:Identificador}: ${2:Imagem} : ${3:label} : ${4:Sair} : ${5:Limpar}\n$0'
+    'body': '[OPP]\n${1:Identificador}: ${2:Imagem} : ${3:label} : ${4:Sair} : ${5:Limpar} : ${6:Recarrega}\n$0'
     'description': """
     Permite acrescentar botões de ação na tela de parâmetros (que normalmente possui apenas os botões Confirmar e Retornar).
     Deve ser utilizada em conjunto com a tag [PAR].
     Caso use "Limpar", ao retornar para a tela de parâmetros os parâmetros voltarão aos seus valores defaults.
     Por padrão, os parâmetros mantêm os valores alterados.
+    Caso "Recarrega" seja Sim, o conteúdo das FKs ocultas e protegidas será recarregado no retorno do grid.
+    O default é não recarregar.
 
     Após o clique, o [OPP] é considerado como um parâmetro, comumente sendo utilizado nos blocos [MII], [MIF], [PLI] e [SQL].
     Seu conteúdo principal (ID), obtido através de [OPP], é equivalente ao identificador do botão clicado.
@@ -400,6 +403,7 @@
           - S: além de gerar na área temporária, exibe o mesmo na tela
           - N: apenas gera na área temporária
           - P: gera uma planilha ao invés de um PDF
+          - D: envia direto para a impressora padrão
 
     Exemplo:
       [PDF]
@@ -665,6 +669,7 @@
       O tipo W de um elemento inválido mostrará o alerta, porém permitirá prosseguir.
       O tipo E de um elemento inválido mostrará um erro ao tentar dar sequência à operação e não permitirá prosseguir.
     • A MENSAGEM é o que será exibido quando o elemento for inválido e o usuário tentar prosseguir com a operação.
+      É possível utilizar #SELECT.
       Em caso de erro no banco, a mensagem retornada será do erro do banco, e não do VDD.
 
     Sintaxe:
@@ -749,11 +754,13 @@
 
   'DT [PAR]':
     'prefix': 'pardt'
-    'body': '[${1:PARAMETRO}]: ${2:Label}: DT$3: ${4:N;} ${5:Data Inicial}; ${6:Data Final} ${7:;WHERE} : ${8:Default} : ${9:ID do VDD} : ${10:[PAR Posicionamento]}\n$0'
+    'body': '[${1:PARAMETRO}]: ${2:Label}: DT$3: ${4:NV} ${5:Data Inicial}; ${6:Data Final} ${7:;WHERE} : ${8:Default} : ${9:ID do VDD} : ${10:[PAR Posicionamento]}\n$0'
     'description': """
     O parâmetro de data pode (opcionalmente) receber em sua notação:
 
-    • N: Indica que o calendário não será exibido ao clicar no botão do mesmo
+    • N: Indica que o calendário não será exibido ao clicar no botão do mesmo.
+      (não é necessário ter ";" após o mesmo);
+    • V: Indica que será permitido que o campo fique vazio.
       (não é necessário ter ";" após o mesmo);
     • RangeInicial e RangeFinal (separados por ";"): somente podem ser utilizados juntos.
       Indicam um intervalo de datas permitidas pelo parâmetro;
@@ -1411,6 +1418,7 @@
     [$POPUP$]   [$BARRA$]
     [$EDT$]     [$FK$]   [$n$]
     [$WIDTH$]   [$HEIGHT$]
+    [$SYSMYO$]  [$SYSOPC$]  [$SYSAPP$]
     BEL         EOT
     AQUI_TEM_DOIS_PONTOS
     AQUI_TEM_PONTO_VIRG
