@@ -177,7 +177,7 @@
 
   'DT [EDT]':
     'prefix': 'edtdt'
-    'body': '${1:ID}:\t DT: ${3:;S}: ${4:N;} ${5:Data Inicial}; ${6:Data Final} ${7:;WHERE}\t :${8:TABLE_NAME}:${9:COLUMN_NAME}:${10:USER_DESCRIPTION}:${11:R}\n$0'
+    'body': '${1:ID}:\t DT: ${3:;S}: ${4:NV;} ${5:Data Inicial}; ${6:Data Final} ${7:;WHERE}\t :${8:TABLE_NAME}:${9:COLUMN_NAME}:${10:USER_DESCRIPTION}:${11:R}\n$0'
     'description': 'Campo editável tipo data.'
 
   'CK [EDT]':
@@ -280,26 +280,6 @@
       [MIF]
       #> instr('[$$$]', '$$$') = 0 and '[OPP]'='OPC01' <#
       Registro excluído com sucesso!
-    """
-
-  '[MSI]':
-    'prefix': 'msi'
-    'body': '[MSI]\n${1:Mensagem}\n$0'
-    'description': """Mensagem condicional apresentada antes da execução de [SQL].
-
-    Exemplo:
-      [MSI]
-      Executar Script?
-    """
-
-  '[MSF]':
-    'prefix': 'msf'
-    'body': '[MSF]\n${1:Mensagem}\n$0'
-    'description': """Mensagem a ser apresentada após a execução de [SQL].
-
-    Exemplo:
-      [MSF]
-      Script executado com sucesso!
     """
 
   '[OPC]':
@@ -754,14 +734,12 @@
 
   'DT [PAR]':
     'prefix': 'pardt'
-    'body': '[${1:PARAMETRO}]: ${2:Label}: DT$3: ${4:NV} ${5:Data Inicial}; ${6:Data Final} ${7:;WHERE} : ${8:Default} : ${9:ID do VDD} : ${10:[PAR Posicionamento]}\n$0'
+    'body': '[${1:PARAMETRO}]: ${2:Label}: DT$3: ${4:NV;} ${5:Data Inicial}; ${6:Data Final} ${7:;WHERE} : ${8:Default} : ${9:ID do VDD} : ${10:[PAR Posicionamento]}\n$0'
     'description': """
     O parâmetro de data pode (opcionalmente) receber em sua notação:
 
-    • N: Indica que o calendário não será exibido ao clicar no botão do mesmo.
-      (não é necessário ter ";" após o mesmo);
-    • V: Indica que será permitido que o campo fique vazio.
-      (não é necessário ter ";" após o mesmo);
+    • N: Indica que o calendário não será exibido ao clicar no botão do mesmo;
+    • V: Indica que será permitido que o campo fique vazio;
     • RangeInicial e RangeFinal (separados por ";"): somente podem ser utilizados juntos.
       Indicam um intervalo de datas permitidas pelo parâmetro;
     • Where: somente serão datas válidas as que retornarem verdadeiro na condição definida.
