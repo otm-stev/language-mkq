@@ -357,7 +357,7 @@
     Obs: Caso utilize '+>' em um OPP, deverá ser utilizado em todos os OPPs criados.
 
     Sintaxe:
-    Identificador : Imagem : Label : Sair (fechar form)
+    Identificador : Imagem : Label : Sair (fechar form) : Limpar : Recarrega
 
     Exemplo:
       [OPP]
@@ -855,7 +855,7 @@
     'description': """
     Parâmetro tipo texto.
 
-    Pode receber, em sua notação, três informações:
+    Pode receber, em sua notação, quatro informações:
       • Número de caracteres permitidos (comprimento do texto);
       • U para indicar uppercase ou L para indicar lowercase;
       • Expressão regular para validar os caracteres digitados;
@@ -1086,7 +1086,7 @@
     'prefix': 'sqlcmd'
     'body': '@>SQL\nbegin\n\t$1\nend;\n$0'
     'description': """
-    Permite executar um bloco PL/SQL padrão .
+    Permite executar um bloco PL/SQL padrão.
 
     Exemplo
       @>SQL
