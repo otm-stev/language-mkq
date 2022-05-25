@@ -698,6 +698,9 @@
       • Desabilitar o parâmetro ($);
       • Impedir a quebra de linha antes do parâmetro (#);
       • Inserir uma linha separadora antes do parâmetro (@).
+        • Se definida linha separado, após o label do parâmetro é possível definir um subtítulo para a seção.
+          Para isso, utiliza-se outro @, seguido do subtítulo e @@@@ 
+
     """
 
   'CK [PAR]':

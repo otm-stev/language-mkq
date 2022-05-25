@@ -1,6 +1,6 @@
 # Language MKQ
 
-**Correspondente à versão 24.20220120_64 da OTMSuite**
+**Correspondente à versão 24.20220524_64 da OTMSuite**
 
 Pacote complementar ao otmsuite-utils.
 
